@@ -1,73 +1,78 @@
-# React + TypeScript + Vite
+# Nexora - Community & Event Management Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Rise above. Together.**
 
-Currently, two official plugins are available:
+Nexora is a modern, high-fidelity community and event management platform built with React, TypeScript, and TailwindCSS. It features a customizable community chat workspace, interactive stats dashboards, live events tracking, and a digital certificates verification system.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🌟 Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+*   **📊 Premium Analytics Dashboard (`/dashboard`)**
+    *   Dynamic quick action tiles for event creation, certificate lookup, and community hub access.
+    *   Interactive visual tracking with live monthly attendance bar charts (Framer Motion animations).
+    *   Leaderboard showcasing top community contributors and event organizers.
+*   **💬 Custom Community Workspaces (`/community`)**
+    *   A clean, custom Discord-inspired 3-pane interface tailored with Nexora's signature warm/amber accents.
+    *   Real-time categorizable community hub channels (Tech, Gaming, Arts, Sports, Business).
+    *   Dynamic chat bubbles with integrated attachment and emoji triggers.
+    *   Collapsible active members list for clean focus.
+*   **📅 Event Hub (`/events`)**
+    *   Comprehensive list of upcoming events with dynamic attendee capacity meters.
+    *   Interactive "Create Event" engine.
+    *   Full-page detailed view for individual events.
+*   **🎓 Certificate Generation & Verification (`/certificates`)**
+    *   Generate and export custom professional certificates.
+    *   Unique public verification routes (`/verify/:id`) to check authenticity instantly.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+*   **Framework:** React 19 + TypeScript + Vite
+*   **Styling:** TailwindCSS + Custom Vanila CSS overrides
+*   **Animations:** Framer Motion
+*   **UI Components:** Radix UI primitives & Lucide Icons
+*   **State Management / Querying:** TanStack React Query
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Getting Started
+
+Follow these steps to run Nexora locally on your machine:
+
+### 1. Clone & Install
+```bash
+# Clone the repository
+git clone https://github.com/rohithrk7/nexora.git
+cd nexora
+
+# Install dependencies
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 2. Configure Environment Variables
+Create a `.env` file in the root directory and use the template from `.env.example`:
+```bash
+cp .env.example .env
 ```
+Fill in your Firebase credentials in the `.env` file:
+```env
+VITE_FIREBASE_API_KEY=your_api_key_here
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain_here
+VITE_FIREBASE_PROJECT_ID=your_project_id_here
+VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket_here
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id_here
+VITE_FIREBASE_APP_ID=your_app_id_here
+```
+
+### 3. Start Development Server
+```bash
+npm run dev
+```
+Open **[http://localhost:5173](http://localhost:5173)** in your browser to view the application.
+
+---
+
+## 📄 License
+This project is private and created for community showcase purposes.
